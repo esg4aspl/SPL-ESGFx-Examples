@@ -14,8 +14,11 @@
 The Hockerty Shirts Configurator SPL features 236 concrete options and supports over 2 million unique product configurations.
 
 ## ESG-Fx Model
-
 ![ESG-Fx Model](https://github.com/esg4aspl/SPL-ESGFx-Examples/blob/main/Hockerty%20Shirts%20Configurator/HockertyShirtConfigurator_ESGFx_Model.png)
+
+![ESG-Fx Model2](https://github.com/esg4aspl/SPL-ESGFx-Examples/blob/main/Hockerty%20Shirts%20Configurator/HockertyShirtConfigurator_ESGFx_Model2.png)
+
+![ESG-Fx Model](https://github.com/esg4aspl/SPL-ESGFx-Examples/blob/main/Hockerty%20Shirts%20Configurator/HockertyShirtConfigurator_ESGFx_Model3.png)
 
 There are 275 vertices and 642 edges in this ESG-Fx model. 
 
