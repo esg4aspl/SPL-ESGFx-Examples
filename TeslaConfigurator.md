@@ -11,7 +11,7 @@ The Tesla Configurator SPL features 53 concrete options and supports 417,600 uni
 
 ## ESG-Fx Model
 
-![ESG-Fx Model]([TeslaConfigurator_ESGFx_Model.png](https://github.com/esg4aspl/SPL-ESGFx-Examples/blob/main/TeslaConfigurator/TeslaConfigurator_ESGFx_Model.png))
+![ESG-Fx Model](https://github.com/esg4aspl/SPL-ESGFx-Examples/blob/main/TeslaConfigurator/TeslaConfigurator_ESGFx_Model.png)
 
 There are 73 vertices and 271 edges in this ESG-Fx model. 
 
