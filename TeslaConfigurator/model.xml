@@ -1,0 +1,374 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<featureModel>
+	<properties>
+		<graphics key="autolayoutconstraints" value="false"/>
+		<graphics key="legendautolayout" value="true"/>
+		<graphics key="showconstraints" value="true"/>
+		<graphics key="showshortnames" value="false"/>
+		<graphics key="layout" value="horizontal"/>
+		<graphics key="showcollapsedconstraints" value="true"/>
+		<graphics key="legendhidden" value="false"/>
+		<graphics key="layoutalgorithm" value="1"/>
+	</properties>
+	<struct>
+		<and abstract="true" mandatory="true" name="TeslaConfigurator">
+			<graphics key="collapsed" value="false"/>
+			<alt abstract="true" mandatory="true" name="Model">
+				<graphics key="collapsed" value="true"/>
+				<feature name="ModelS"/>
+				<feature name="Model3"/>
+				<feature name="ModelX"/>
+				<feature name="ModelY"/>
+			</alt>
+			<alt abstract="true" mandatory="true" name="Payment">
+				<graphics key="collapsed" value="true"/>
+				<feature name="Cash"/>
+				<feature name="Lease"/>
+				<feature name="Finance"/>
+			</alt>
+			<alt abstract="true" name="Savings">
+				<graphics key="collapsed" value="true"/>
+				<feature name="5-Year"/>
+				<feature name="Monthly"/>
+			</alt>
+			<alt abstract="true" mandatory="true" name="Drivetrain">
+				<graphics key="collapsed" value="true"/>
+				<feature name="Rear-Wheel"/>
+				<feature name="LongRangeRear-Wheel"/>
+				<feature name="LongRangeAll-Wheel"/>
+				<feature name="PerformanceAll-Wheel"/>
+				<feature name="All-Wheel"/>
+				<feature name="Plaid"/>
+			</alt>
+			<alt abstract="true" mandatory="true" name="Color">
+				<graphics key="collapsed" value="true"/>
+				<feature name="StealthGrey"/>
+				<feature name="PearlWhiteMulti-Coat"/>
+				<feature name="DeepBlueMetallic"/>
+				<feature name="SolidBlack"/>
+				<feature name="UltraRed"/>
+				<feature name="LunarSilver"/>
+				<feature name="QuickSliver"/>
+			</alt>
+			<alt abstract="true" mandatory="true" name="Wheels">
+				<graphics key="collapsed" value="true"/>
+				<feature name="Photon"/>
+				<feature name="Nova"/>
+				<feature name="Warp"/>
+				<feature name="GeminiDark"/>
+				<feature name="Induction"/>
+				<feature name="Überturbine"/>
+				<feature name="Cyberstream"/>
+				<feature name="Turbine"/>
+				<feature name="Tempest"/>
+				<feature name="Arachind"/>
+			</alt>
+			<alt abstract="true" mandatory="true" name="Interior">
+				<graphics key="collapsed" value="true"/>
+				<feature name="All-Black"/>
+				<feature name="Black"/>
+				<feature name="Black&amp;White"/>
+				<feature name="Cream"/>
+			</alt>
+			<alt abstract="true" mandatory="true" name="Number of Seats">
+				<graphics key="collapsed" value="true"/>
+				<feature name="Five-Seat"/>
+				<feature name="Six-Seat"/>
+				<feature name="Seven-Seat"/>
+			</alt>
+			<alt abstract="true" mandatory="true" name="Steering Wheel">
+				<graphics key="collapsed" value="true"/>
+				<feature name="Regular"/>
+				<feature name="Yoke"/>
+			</alt>
+			<feature name="FullSelf-Driving"/>
+			<or abstract="true" name="Charging">
+				<graphics key="collapsed" value="true"/>
+				<feature name="Home"/>
+				<feature name="Mobile"/>
+			</or>
+			<or abstract="true" name="Accessories">
+				<graphics key="collapsed" value="false"/>
+				<feature name="CenterConsoleTrays"/>
+				<feature name="All-WeatherInteriorLiners"/>
+				<feature name="RoofRack"/>
+				<feature name="Sunshade"/>
+				<feature name="CarCover"/>
+				<feature name="AirCompressor+TireRepairKit"/>
+			</or>
+			<feature name="Tow"/>
+			<feature name="DriveAnywhere"/>
+			<feature mandatory="true" name="AccountDetails"/>
+			<feature mandatory="true" name="Card"/>
+		</and>
+	</struct>
+	<constraints>
+		<rule>
+			<imp>
+				<var>Rear-Wheel</var>
+				<var>Model3</var>
+			</imp>
+		</rule>
+		<rule>
+			<imp>
+				<disj>
+					<var>LongRangeRear-Wheel</var>
+					<disj>
+						<var>LongRangeAll-Wheel</var>
+						<var>PerformanceAll-Wheel</var>
+					</disj>
+				</disj>
+				<disj>
+					<var>Model3</var>
+					<var>ModelY</var>
+				</disj>
+			</imp>
+		</rule>
+		<rule>
+			<imp>
+				<disj>
+					<var>All-Wheel</var>
+					<var>Plaid</var>
+				</disj>
+				<disj>
+					<var>ModelX</var>
+					<var>ModelS</var>
+				</disj>
+			</imp>
+		</rule>
+		<rule>
+			<imp>
+				<disj>
+					<var>Photon</var>
+					<var>Nova</var>
+				</disj>
+				<var>Model3</var>
+			</imp>
+		</rule>
+		<rule>
+			<eq>
+				<var>Warp</var>
+				<conj>
+					<var>Model3</var>
+					<var>PerformanceAll-Wheel</var>
+				</conj>
+			</eq>
+		</rule>
+		<rule>
+			<imp>
+				<disj>
+					<var>GeminiDark</var>
+					<var>Induction</var>
+				</disj>
+				<var>ModelY</var>
+			</imp>
+		</rule>
+		<rule>
+			<eq>
+				<var>Überturbine</var>
+				<conj>
+					<var>ModelY</var>
+					<var>PerformanceAll-Wheel</var>
+				</conj>
+			</eq>
+		</rule>
+		<rule>
+			<imp>
+				<disj>
+					<var>Cyberstream</var>
+					<var>Turbine</var>
+				</disj>
+				<var>ModelX</var>
+			</imp>
+		</rule>
+		<rule>
+			<imp>
+				<disj>
+					<var>Tempest</var>
+					<var>Arachind</var>
+				</disj>
+				<var>ModelS</var>
+			</imp>
+		</rule>
+		<rule>
+			<imp>
+				<var>Cream</var>
+				<disj>
+					<var>ModelS</var>
+					<var>ModelX</var>
+				</disj>
+			</imp>
+		</rule>
+		<rule>
+			<imp>
+				<var>Black</var>
+				<var>Model3</var>
+			</imp>
+		</rule>
+		<rule>
+			<imp>
+				<var>All-Black</var>
+				<disj>
+					<var>ModelS</var>
+					<disj>
+						<var>ModelX</var>
+						<var>ModelY</var>
+					</disj>
+				</disj>
+			</imp>
+		</rule>
+		<rule>
+			<imp>
+				<var>Yoke</var>
+				<disj>
+					<var>ModelS</var>
+					<var>ModelX</var>
+				</disj>
+			</imp>
+		</rule>
+		<rule>
+			<imp>
+				<var>CenterConsoleTrays</var>
+				<disj>
+					<var>Model3</var>
+					<var>ModelY</var>
+				</disj>
+			</imp>
+		</rule>
+		<rule>
+			<imp>
+				<var>RoofRack</var>
+				<disj>
+					<var>ModelS</var>
+					<var>Model3</var>
+				</disj>
+			</imp>
+		</rule>
+		<rule>
+			<imp>
+				<var>Sunshade</var>
+				<disj>
+					<var>ModelS</var>
+					<var>ModelY</var>
+				</disj>
+			</imp>
+		</rule>
+		<rule>
+			<imp>
+				<var>CarCover</var>
+				<var>ModelX</var>
+			</imp>
+		</rule>
+		<rule>
+			<imp>
+				<var>AirCompressor+TireRepairKit</var>
+				<var>ModelX</var>
+			</imp>
+		</rule>
+		<rule>
+			<imp>
+				<var>Tow</var>
+				<disj>
+					<var>ModelX</var>
+					<var>ModelY</var>
+				</disj>
+			</imp>
+		</rule>
+		<rule>
+			<imp>
+				<var>ModelX</var>
+				<var>Tow</var>
+			</imp>
+		</rule>
+		<rule>
+			<imp>
+				<var>DriveAnywhere</var>
+				<disj>
+					<var>ModelS</var>
+					<var>ModelX</var>
+				</disj>
+			</imp>
+		</rule>
+		<rule>
+			<imp>
+				<disj>
+					<var>ModelS</var>
+					<var>Model3</var>
+				</disj>
+				<var>Five-Seat</var>
+			</imp>
+		</rule>
+		<rule>
+			<imp>
+				<conj>
+					<var>ModelY</var>
+					<var>LongRangeAll-Wheel</var>
+				</conj>
+				<disj>
+					<var>Five-Seat</var>
+					<var>Seven-Seat</var>
+				</disj>
+			</imp>
+		</rule>
+		<rule>
+			<imp>
+				<conj>
+					<var>ModelY</var>
+					<var>LongRangeRear-Wheel</var>
+				</conj>
+				<var>Five-Seat</var>
+			</imp>
+		</rule>
+		<rule>
+			<imp>
+				<conj>
+					<var>ModelY</var>
+					<var>PerformanceAll-Wheel</var>
+				</conj>
+				<var>Five-Seat</var>
+			</imp>
+		</rule>
+		<rule>
+			<imp>
+				<conj>
+					<var>ModelX</var>
+					<var>Plaid</var>
+				</conj>
+				<var>Six-Seat</var>
+			</imp>
+		</rule>
+		<rule>
+			<imp>
+				<var>5-Year</var>
+				<var>Cash</var>
+			</imp>
+		</rule>
+		<rule>
+			<imp>
+				<var>Monthly</var>
+				<disj>
+					<var>Finance</var>
+					<var>Lease</var>
+				</disj>
+			</imp>
+		</rule>
+		<rule>
+			<imp>
+				<var>LunarSilver</var>
+				<disj>
+					<var>ModelS</var>
+					<var>ModelX</var>
+				</disj>
+			</imp>
+		</rule>
+		<rule>
+			<imp>
+				<var>QuickSliver</var>
+				<disj>
+					<var>Model3</var>
+					<var>ModelY</var>
+				</disj>
+			</imp>
+		</rule>
+	</constraints>
+</featureModel>
